@@ -1,78 +1,217 @@
-# MERN Stack Integration Assignment
+# 🧩 MERN Stack Integration — Week 4 Assignment
 
-This assignment focuses on building a full-stack MERN (MongoDB, Express.js, React.js, Node.js) application that demonstrates seamless integration between front-end and back-end components.
+## 📖 Project Overview
+This project is part of the **PLP MERN Stack Development Program (Week 4: Deep Dive into MERN Stack Integration)**.  
+The goal of this assignment is to build a **full-stack blog application** demonstrating seamless integration between:
+- **MongoDB** (database)
+- **Express.js** (backend API)
+- **React.js (Vite)** (frontend interface)
+- **Node.js** (server environment)
 
-## Assignment Overview
+The project covers complete CRUD functionality, authentication, image uploads, pagination, search, and comments — showcasing modern MERN stack development and integration skills.
 
-You will build a blog application with the following features:
-1. RESTful API with Express.js and MongoDB
-2. React front-end with component architecture
-3. Full CRUD functionality for blog posts
-4. User authentication and authorization
-5. Advanced features like image uploads and comments
+---
 
-## Project Structure
+## 🚀 Features Implemented
+✅ **Full CRUD operations** for blog posts  
+✅ **RESTful API** built with Express and MongoDB (Mongoose)  
+✅ **React front-end** with component-based architecture  
+✅ **User authentication** using JWT (register & login)  
+✅ **Category management** for organizing posts  
+✅ **Image upload** using Multer  
+✅ **Pagination, search & filtering**  
+✅ **Comments system** for user interaction  
+✅ **Protected routes** and state management with React Context  
+✅ **Environment variables** for configuration  
+✅ **Responsive design** and clean UI  
 
-```
-mern-blog/
-├── client/                 # React front-end
-│   ├── public/             # Static files
-│   ├── src/                # React source code
-│   │   ├── components/     # Reusable components
-│   │   ├── pages/          # Page components
-│   │   ├── hooks/          # Custom React hooks
-│   │   ├── services/       # API services
-│   │   ├── context/        # React context providers
-│   │   └── App.jsx         # Main application component
-│   └── package.json        # Client dependencies
-├── server/                 # Express.js back-end
-│   ├── config/             # Configuration files
-│   ├── controllers/        # Route controllers
-│   ├── models/             # Mongoose models
-│   ├── routes/             # API routes
-│   ├── middleware/         # Custom middleware
-│   ├── utils/              # Utility functions
-│   ├── server.js           # Main server file
-│   └── package.json        # Server dependencies
-└── README.md               # Project documentation
-```
+---
 
-## Getting Started
+## 🧱 Project Structure
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week4-Assignment.md` file
-4. Complete the tasks outlined in the assignment
+mern-stack-integration-Jsews/
+├── client/ # React front-end (Vite)
+│ ├── public/
+│ ├── src/
+│ │ ├── components/
+│ │ ├── pages/
+│ │ ├── hooks/
+│ │ ├── services/
+│ │ ├── context/
+│ │ └── App.jsx
+│ └── package.json
+├── server/ # Express.js back-end
+│ ├── config/
+│ ├── controllers/
+│ ├── models/
+│ ├── routes/
+│ ├── middleware/
+│ ├── uploads/
+│ ├── server.js
+│ └── package.json
+└── README.md
 
-## Files Included
 
-- `Week4-Assignment.md`: Detailed assignment instructions
-- Starter code for both client and server:
-  - Basic project structure
-  - Configuration files
-  - Sample models and components
+---
 
-## Requirements
+## ⚙️ Installation & Setup Guide
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- npm or yarn
-- Git
+### 🧩 Prerequisites
+Make sure you have installed:
+- **Node.js** (v18+)
+- **npm** (comes with Node)
+- **MongoDB** (local or MongoDB Atlas)
+- **Git**
 
-## Submission
+---
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+### 🖥️ 1. Clone the Repository
+```bash
+git clone https://github.com/PLP-MERN-Stack-Development/mern-stack-integration-Jsews.git
+cd mern-stack-integration-Jsews
 
-1. Complete both the client and server portions of the application
-2. Implement all required API endpoints
-3. Create the necessary React components and hooks
-4. Document your API and setup process in the README.md
-5. Include screenshots of your working application
+🗄️ 2. Server Setup
+cd server
+npm install
 
-## Resources
 
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [Express.js Documentation](https://expressjs.com/)
-- [React Documentation](https://react.dev/)
-- [Node.js Documentation](https://nodejs.org/en/docs/)
-- [Mongoose Documentation](https://mongoosejs.com/docs/) 
+Create an .env file using the example provided:
+
+cp .env.example .env
+
+
+Then add your environment variables:
+
+MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/mern_blog
+JWT_SECRET=your_jwt_secret
+PORT=5000
+
+
+Start the development server:
+
+npm run dev
+
+💻 3. Client Setup
+cd ../client
+npm install
+
+
+Create an .env file:
+
+VITE_API_BASE_URL=http://localhost:5000/api
+
+
+Start the React front-end:
+
+npm run dev
+
+
+Open your browser at http://localhost:5173
+
+🧠 API Documentation
+🔐 Authentication
+Method	Endpoint	Description
+POST	/api/auth/register	Register new user
+POST	/api/auth/login	Login and get JWT token
+📝 Blog Posts
+Method	Endpoint	Description
+GET	/api/posts	Get all posts (supports page, limit, search, category)
+GET	/api/posts/:id	Get single post by ID
+POST	/api/posts	Create a new post (requires token)
+PUT	/api/posts/:id	Update post (requires token)
+DELETE	/api/posts/:id	Delete post (requires token)
+🏷️ Categories
+Method	Endpoint	Description
+GET	/api/categories	Get all categories
+POST	/api/categories	Create a category
+💬 Comments
+Method	Endpoint	Description
+GET	/api/posts/:postId/comments	Get approved comments for a post
+POST	/api/posts/:postId/comments	Submit a comment for a post
+🧩 Technologies Used
+Layer	Technology
+Frontend	React.js (Vite), React Router, Axios, React Hook Form
+Backend	Express.js, Node.js
+Database	MongoDB, Mongoose
+Authentication	JWT, bcryptjs
+Validation	express-validator, Joi
+File Uploads	Multer
+State Management	React Context API, Hooks
+Styling	CSS / Tailwind (optional)
+
+	
+	
+🧪 Testing
+
+Use Postman or cURL to test your endpoints.
+Example:
+
+curl -X POST http://localhost:5000/api/posts \
+  -H "Authorization: Bearer <token>" \
+  -F "title=My Blog Post" \
+  -F "content=This is a test post"
+
+💾 Environment Files
+server/.env.example
+MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/blog
+JWT_SECRET=your_jwt_secret
+PORT=5000
+
+client/.env.example
+VITE_API_BASE_URL=http://localhost:5000/api
+
+🧹 Folder Notes
+Folder	Description
+/client/src/components	UI components like NavBar, PostCard, Pagination
+/client/src/pages	Page-level components (Home, Post, Login, Register, etc.)
+/client/src/context	React Context for authentication
+/server/models	Mongoose models for User, Post, Category, Comment
+/server/routes	Express API routes
+/server/middleware	Authentication, error handling, validation
+/server/uploads	Local storage for images
+🧭 Advanced Features (Implemented)
+
+🔐 User authentication with JWT tokens
+
+🖼️ Image uploads using Multer
+
+💬 Comment system
+
+🔍 Search and filter posts
+
+⏩ Pagination for blog list
+
+⚡ Optimistic UI updates
+
+🧱 Proper input validation and error handling
+
+🏁 Expected Outcome
+
+Fully functional MERN Blog Application
+
+Proper integration between MongoDB, Express, React, and Node
+
+Clean code organization and clear separation of concerns
+
+Responsive front-end and smooth user experience
+
+📚 References
+
+MongoDB Documentation
+
+Express.js Guide
+
+React Docs
+
+Node.js Docs
+
+Mongoose Docs
+
+👩🏽‍💻 Author
+
+Janice Tusiime Sewava
+MERN Stack Developer — PLP MERN Stack Development Program
+
+🧾 License
+
+This project is for educational purposes under the PLP MERN Stack Development Program.
