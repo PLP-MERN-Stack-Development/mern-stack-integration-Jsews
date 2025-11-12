@@ -30,26 +30,26 @@ The project covers complete CRUD functionality, authentication, image uploads, p
 ## 🧱 Project Structure
 
 mern-stack-integration-Jsews/
-├── client/ # React front-end (Vite)
-│ ├── public/
-│ ├── src/
-│ │ ├── components/
-│ │ ├── pages/
-│ │ ├── hooks/
-│ │ ├── services/
-│ │ ├── context/
-│ │ └── App.jsx
-│ └── package.json
-├── server/ # Express.js back-end
-│ ├── config/
-│ ├── controllers/
-│ ├── models/
-│ ├── routes/
-│ ├── middleware/
-│ ├── uploads/
-│ ├── server.js
-│ └── package.json
-└── README.md
+<br>├── client/ # React front-end (Vite)</br>
+<br>│ ├── public/</br>
+<br>│ ├── src/</br>
+<br>│ │ ├── components/</br>
+<br>│ │ ├── pages/</br>
+<br>│ │ ├── hooks/</br>
+<br>│ │ ├── services/</br>
+<br>│ │ ├── context/</br>
+<br>│ │ └── App.jsx</br>
+<br>│ └── package.json</br>
+<br>├── server/ # Express.js back-end</br>
+<br>│ ├── config/</br>
+<br>│ ├── controllers/</br>
+<br>│ ├── models/</br>
+<br>│ ├── routes/</br>
+<br>│ ├── middleware/</br>
+<br>│ ├── uploads/</br>
+<br>│ ├── server.js</br>
+<br>│ └── package.json</br>
+<br>└── README.md</br>
 
 
 ---
@@ -82,9 +82,15 @@ cp .env.example .env
 
 Then add your environment variables:
 
-MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/mern_blog
-JWT_SECRET=your_jwt_secret
+# Port your Express server will run on
 PORT=5000
+
+# MongoDB connection string (local)
+MONGO_URI=mongodb://localhost:27017
+
+# JWT secret for authentication
+JWT_SECRET=supersecretkey
+
 
 
 Start the development server:
